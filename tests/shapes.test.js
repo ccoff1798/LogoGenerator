@@ -23,4 +23,44 @@ describe('Generator', () => {
         
         consoleLogMock.mockRestore();
     });
+    test('Shape should change color', async() =>{
+        inquirer.prompt = jest.fn()
+            .mockResolvedValueOnce({
+                text: 'ABC',
+                textColor: 'blue',
+                shape: 'circle',
+                shapeColor: 'red'
+            });
+        const shapeColor = jest.spyOn(console, 'log')
+        shapeColor.mockImplementation(() => {});
+
+        const generator = new Generator();
+
+        await generator.generateLogo();
+
+        expect(shapeColor).toHaveBeenCalledWith(`Generated ShapeColor red`);
+        
+        shapeColor.mockRestore();
+    })
+    test('Shape should change color', async() =>{
+        inquirer.prompt = jest.fn()
+            .mockResolvedValueOnce({
+                text: 'ABC',
+                textColor: 'blue',
+                shape: 'circle',
+                shapeColor: 'red'
+            });
+        const textColor = jest.spyOn(console, 'log')
+        textColor.mockImplementation(() => {});
+
+        const generator = new Generator();
+
+        await generator.generateLogo();
+
+        expect(textColor).toHaveBeenCalledWith(`Generated textColor blue`);
+        
+        textColor.mockRestore();
+    })
 });
+
+
