@@ -1,4 +1,4 @@
-const Generator = require('../lib/shapes.js'); // Adjust the path to match your project structure
+const Generator = require('../lib/shapes.js'); 
 const inquirer = require('inquirer');
 
 jest.mock('inquirer');
