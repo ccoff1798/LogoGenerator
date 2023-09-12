@@ -18,4 +18,4 @@ This program was made by me, with the help of the API documentation.
 ## Tests
 To test the program, make sure you add jest to your test script in your package.json. Type npm test and make sure the test works!
 
-[Link to Test video](https://youtu.be/WJZrQWjMgZA)
+[Link to Test video](https://youtu.be/PitobOoLjvA)
